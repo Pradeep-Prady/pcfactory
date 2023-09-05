@@ -1,11 +1,19 @@
 {
   "name": "a2dpcfactory",
   "version": "1.0.0",
-  "description": "Build your Own PC",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Pradeep-Prady/pcfactory.git"
+  },
   "author": "Pradeep M",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pradeep-Prady/pcfactory/issues"
+  },
+  "homepage": "https://github.com/Pradeep-Prady/pcfactory#readme"
 }
