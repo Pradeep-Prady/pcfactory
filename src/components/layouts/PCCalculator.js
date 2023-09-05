@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import data from "../data";
-import calsi from '../../assets/calsi.png'
+import calsi from "../../assets/calsi.png";
 
 export default function PCCalculator() {
   const [total, setTotal] = useState(0);
@@ -38,6 +38,16 @@ export default function PCCalculator() {
   const [ramSlot2Price, setRamSlot2Price] = useState(0);
   const [ramSlot3Price, setRamSlot3Price] = useState(0);
   const [ramSlot4Price, setRamSlot4Price] = useState(0);
+
+  const [storageSlot1, setStorageSlot1] = useState("select");
+  const [storageSlot2, setStorageSlot2] = useState("select");
+  const [storageSlot3, setStorageSlot3] = useState("select");
+  const [storageSlot4, setStorageSlot4] = useState("select");
+
+  const [storageSlot1Price, setStorageSlot1Price] = useState(0);
+  const [storageSlot2Price, setStorageSlot2Price] = useState(0);
+  const [storageSlot3Price, setStorageSlot3Price] = useState(0);
+  const [storageSlot4Price, setStorageSlot4Price] = useState(0);
 
   const handleChange = (e) => {
     const selected = e.target;
@@ -126,6 +136,44 @@ export default function PCCalculator() {
     }
   };
 
+  const handleStorageChange = (e) => {
+    const selected = e.target;
+    const selectedS = selected.value;
+
+    const selectedStorage = data.storageData.find((m) => m.name === storage);
+    const selectedStorageOption = selectedStorage.detail.find(
+      (storageOption) => storageOption.size === selectedS
+    );
+
+    if (selected.name === "storageSlot1") {
+      setStorageSlot1(selectedS);
+      setStorageSlot1Price(
+        selectedStorageOption ? selectedStorageOption.price : 0
+      );
+    }
+
+    if (selected.name === "storageSlot2") {
+      setStorageSlot2(selectedS);
+      setStorageSlot2Price(
+        selectedStorageOption ? selectedStorageOption.price : 0
+      );
+    }
+
+    if (selected.name === "storageSlot3") {
+      setStorageSlot3(selectedS);
+      setStorageSlot3Price(
+        selectedStorageOption ? selectedStorageOption.price : 0
+      );
+    }
+
+    if (selected.name === "storageSlot4") {
+      setStorageSlot4(selectedS);
+      setStorageSlot4Price(
+        selectedStorageOption ? selectedStorageOption.price : 0
+      );
+    }
+  };
+
   const findTotal = (e) => {
     e.preventDefault();
 
@@ -171,12 +219,23 @@ export default function PCCalculator() {
       totalPrice += totalramprice;
     }
 
+    if (storage !== "select") {
+      let totalstorageprice =
+        storageSlot1Price +
+        storageSlot2Price +
+        storageSlot3Price +
+        storageSlot4Price;
+      totalPrice += totalstorageprice;
+    }
+
     setTotal(totalPrice);
   };
 
   return (
-    <div className="w-full h-auto md:h-screen bg-mygreen">
-      <h2 className="text-center text-3xl py-3 font-bold "><span className="text-mywhite">PC</span> Calculator</h2>
+    <div className="w-full h-auto md:h-screen bg-mygreen ">
+      <h2 className="text-center text-3xl py-3 font-bold ">
+        <span className="text-mywhite">PC</span> Calculator
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 ">
         <div className="flex items-center justify-center">
@@ -363,6 +422,77 @@ export default function PCCalculator() {
               </select>
             </div>
 
+            {storage !== undefined && storage !== "select" ? (
+              <div className="w-full grid grid-cols-1 sm:grid-cols-2 my-4">
+                <label>Size</label>
+                <div className="grid grid-cols-4 gap-1">
+                  <select
+                    name="storageSlot1"
+                    className="border-none text-myblack outline-none bg-myorange px-2 py-1"
+                    onChange={handleStorageChange}
+                  >
+                    <option value="select">select</option>
+                    {data.storageData
+                      .find((m) => m.name === storage)
+                      .detail.map((ramOption, index) => (
+                        <option key={index} value={ramOption.gb}>
+                          {ramOption.size}
+                        </option>
+                      ))}
+                  </select>
+                  {storageSlot1 !== "select" && (
+                    <select
+                      name="storageSlot2"
+                      className="border-none text-myblack outline-none bg-myorange px-2 py-1"
+                      onChange={handleStorageChange}
+                    >
+                      <option value="select">select</option>
+                      {data.storageData
+                        .find((m) => m.name === storage)
+                        .detail.map((ramOption, index) => (
+                          <option key={index} value={ramOption.gb}>
+                            {ramOption.size}
+                          </option>
+                        ))}
+                    </select>
+                  )}
+                  {storageSlot2 !== "select" && (
+                    <select
+                      name="storageSlot3"
+                      className="border-none text-myblack outline-none bg-myorange px-2 py-1"
+                      onChange={handleStorageChange}
+                    >
+                      <option value="select">select</option>
+                      {data.storageData
+                        .find((m) => m.name === storage)
+                        .detail.map((ramOption, index) => (
+                          <option key={index} value={ramOption.gb}>
+                            {ramOption.size}
+                          </option>
+                        ))}
+                    </select>
+                  )}
+
+                  {storageSlot3 !== "select" && (
+                    <select
+                      name="storageSlot4"
+                      className="border-none text-myblack outline-none bg-myorange px-2 py-1"
+                      onChange={handleStorageChange}
+                    >
+                      <option value="select">select</option>
+                      {data.storageData
+                        .find((m) => m.name === storage)
+                        .detail.map((ramOption, index) => (
+                          <option key={index} value={ramOption.gb}>
+                            {ramOption.size}
+                          </option>
+                        ))}
+                    </select>
+                  )}
+                </div>
+              </div>
+            ) : null}
+
             <div className="w-full grid grid-cols-1 my-10">
               <button
                 className="bg-myorange px-3 py-1 rounded-sm "
@@ -373,8 +503,8 @@ export default function PCCalculator() {
             </div>
           </form>
         </div>
-        <div className="bg-cals flex items-center justify-center">
-          <img className="z-10 absolute blur-sm" src={calsi} alt="pcImage" />
+        <div className="bg-cals flex items-center justify-center overflow-hidden">
+          <img className="z-10 absolute blur-sm w-[350px] sm:w-[380px] lg:w-[550px] " src={calsi} alt="pcImage" />
           <div className="w-3/6 z-50 ">
             <div className=" grid grid-cols-3 gap-7 ">
               <div className="border-4 bg-myblack flex items-center justify-center w-[60px] h-[60px]">
@@ -396,7 +526,10 @@ export default function PCCalculator() {
                     alt="motherboard"
                   />
                 ) : (
-                  <p className="font-semibold text-sm text-white"> Mother Board</p>
+                  <p className="font-semibold text-sm text-white">
+                    {" "}
+                    Mother Board
+                  </p>
                 )}
               </div>
               <div className="border-4 flex bg-myblack items-center justify-center w-[60px] h-[60px]">
@@ -418,7 +551,9 @@ export default function PCCalculator() {
                     alt="powersupplyunitImage"
                   />
                 ) : (
-                  <p className="font-semibold text-sm text-white">Power Supply</p>
+                  <p className="font-semibold text-sm text-white">
+                    Power Supply
+                  </p>
                 )}
               </div>
               <div className="border-4 flex bg-myblack items-center justify-center w-[60px] h-[60px]">
@@ -434,7 +569,11 @@ export default function PCCalculator() {
               </div>
               <div className="border-4 flex bg-myblack items-center justify-center w-[60px] h-[60px]">
                 {osImage ? (
-                  <img className="w-[50px] h-[50px] " src={osImage} alt="osImage" />
+                  <img
+                    className="w-[50px] h-[50px] "
+                    src={osImage}
+                    alt="osImage"
+                  />
                 ) : (
                   <p className="font-semibold text-sm text-white">OS</p>
                 )}

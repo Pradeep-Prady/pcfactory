@@ -9,12 +9,12 @@ export default function Navbar() {
       </div>
       <div className="">
         <a
-          className="font-bold hover:underline px-2 py-1 text-xl  rounded-lg"
+          className="font-bold hover:underline px-2 py-1 text-xl rounded-lg"
           href="https://wa.me/+919025380083"
           target="_blank"
           rel="noreferrer"
         >
-          Enquiry
+          Sales Enquiry
         </a>
       </div>
     </div>

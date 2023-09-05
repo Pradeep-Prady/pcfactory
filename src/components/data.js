@@ -65,43 +65,50 @@ import user4 from "../assets/user/user (4).jpg";
 import user5 from "../assets/user/user (5).jpg";
 import user6 from "../assets/user/user (6).jpg";
 
+
+
 const testimonialData = [
   {
-    name: "User Name",
+    name: "John Smith",
     img: user1,
     content:
-      " Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fssdf Lorem adwe fs sdf Lorem adwe fs sdf sdf sf df sdfwe fef",
+      "I had an amazing experience with this PC building company. They delivered a high-quality gaming PC that exceeded my expectations. The performance is outstanding, and the build quality is top-notch.",
   },
   {
-    name: "User Name",
+    name: "Alice Johnson",
     img: user2,
     content:
-      " Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fssdf Lorem adwe fs sdf Lorem adwe fs sdf sdf sf df sdfwe fef",
-  }, {
-    name: "User Name",
+      "The team at this PC building company is fantastic! They helped me choose the right components for my workstation PC, and the result is incredible. It's been a pleasure working with them.",
+  },
+  {
+    name: "Michael Brown",
     img: user3,
     content:
-      " Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fssdf Lorem adwe fs sdf Lorem adwe fs sdf sdf sf df sdfwe fef",
-  }, {
-    name: "User Name",
+      "I can't thank this PC building company enough for the exceptional service. My gaming PC is a beast, and the customer support was always there to assist me with any questions.",
+  },
+  {
+    name: "Emily Davis",
     img: user4,
     content:
-      " Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fssdf Lorem adwe fs sdf Lorem adwe fs sdf sdf sf df sdfwe fef",
-  }, {
-    name: "User Name",
+      "Outstanding work from this PC building company! The PC they built for me runs like a dream, and the cable management inside the case is a work of art. Highly recommended!",
+  },
+  {
+    name: "Daniel Wilson",
     img: user5,
     content:
-      " Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fssdf Lorem adwe fs sdf Lorem adwe fs sdf sdf sf df sdfwe fef",
-  }, {
-    name: "User Name",
+      "I'm thrilled with the custom PC I got from this company. The performance is incredible, and it runs all my software smoothly. It's a great investment for my work and gaming needs.",
+  },
+  {
+    name: "Sophia Lee",
     img: user6,
     content:
-      " Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fssdf Lorem adwe fs sdf Lorem adwe fs sdf sdf sf df sdfwe fef",
-  }, {
-    name: "User Name",
+      "This PC building company exceeded my expectations. They provided excellent guidance in selecting the right components, and the end result is a powerful PC that I'm proud to own.",
+  },
+  {
+    name: "Olivia Miller",
     img: user1,
     content:
-      " Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fs sdf Lorem adwe fssdf Lorem adwe fs sdf Lorem adwe fs sdf sdf sf df sdfwe fef",
+      "I couldn't be happier with my new PC from this company. The build quality is exceptional, and it's a pleasure to use. Thank you for a fantastic product and service!",
   },
 ];
 
@@ -402,52 +409,182 @@ const storageData = [
   {
     name: "Samsung 970 EVO Plus SSD",
     img: Samsung970EVOPlusSSD,
-    price: 5000,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
   {
     name: "Crucial MX500 SSD",
     img: CrucialMX500SSD,
-    price: 5000,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
   {
     name: "Western Digital WD Blue SN550 SSD",
     img: WesternDigitalWDBlueSN550SSD,
-    price: 5000,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
   {
     name: "Sabrent Rocket NVMe SSD",
     img: SabrentRocketNVMeSSD,
-    price: 4000,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
   {
     name: "Samsung 870 EVO SATA SSD",
     img: Samsung870EVOSATASSD,
-    price: 5000,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
   {
     name: "Seagate Barracuda HDD",
     img: SeagateBarracudaHDD,
-    price: 3000,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
   {
     name: "Western Digital WD Black HDD",
     img: WesternDigitalWDBlackHDD,
-    price: 5000,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
   {
     name: "Toshiba X300 Performance HDD",
     img: ToshibaX300PerformanceHDD,
-    price: 4500,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
   {
     name: "Seagate IronWolf NAS HDD",
     img: SeagateIronWolfNASHDD,
-    price: 5000,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
   {
     name: "Western Digital Red NAS HDD",
     img: WesternDigitalRedNASHDD,
-    price: 5000,
+    detail: [
+      {
+        size: "512 GB",
+        price: 4000,
+      },
+      {
+        size: "1 TB",
+        price: 8000,
+      },
+      {
+        size: "2 TB",
+        price: 12000,
+      },
+    ],
   },
 ];
 
