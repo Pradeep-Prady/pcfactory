@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg {
+  background-image: url("./assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* .bg-calsi {
+  background-image: url("./assets/calsi.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(5px);  
+} 
+*/
+
+.bg-calsi {
+    
+    
+    background-image: url("./assets/calsi.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px); /* Adjust the blur amount as needed */
+  }
+  
+
+  
+.scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome and Safari */
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Hide scrollbar thumb in Chrome and Safari */
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: transparent; /* Hide scrollbar track in Chrome and Safari */
+}
+
+/* Hide scrollbar in Firefox */
+.scroll.dark {
+  scrollbar-color: transparent transparent; /* Thumb color and track color (in this case, both transparent) */
+}
